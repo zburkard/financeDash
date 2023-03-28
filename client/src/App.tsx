@@ -3,7 +3,7 @@ import { CssBaseline } from "@mui/material"
 import { ThemeProvider } from "@mui/material"
 import { createTheme } from "@mui/material/styles"
 import { useMemo } from "react"
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { themeSettings } from "./theme"
 
 
@@ -15,7 +15,10 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline/>
         <Box width="100%" height="100%" padding="1rem 2rem 4rem 2rem">
-          
+          <Routes>
+            <Route path="/" element={<div>dashboard page</div>} />
+            <Route path="/predictions" element={<div>prediction page</div>} /> 
+          </Routes>
         </Box>
       </ThemeProvider>
       </BrowserRouter>
